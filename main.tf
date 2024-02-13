@@ -14,6 +14,9 @@ provider "azurerm" {
   features {}
 }
 
+data "azurerm_subscription" "primary" {
+}
+
 resource "azurerm_resource_group" "rg" {
   name     = "rg-terraform-test"
   location = "westeurope"
@@ -49,4 +52,11 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "bronze" {
 resource "azurerm_storage_data_lake_gen2_filesystem" "unity" {
   name               = "unity"
   storage_account_id = azurerm_storage_account.datalake.id
+}
+
+
+resource "azurerm_role_assignment" "rbac" {
+  scope                = data.azurerm_subscription.primary.id
+  role_definition_name = "Reader"
+  principal_id         = "SPN_ID"
 }
