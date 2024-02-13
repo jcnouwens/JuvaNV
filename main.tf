@@ -44,3 +44,9 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "bronze" {
   name               = "bronze"
   storage_account_id = azurerm_storage_account.datalake.id
 }
+
+
+resource "azurerm_storage_data_lake_gen2_filesystem" "unity" {
+  name               = "unity"
+  storage_account_id = azurerm_storage_account.datalake.id
+}
