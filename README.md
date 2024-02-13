@@ -1,5 +1,5 @@
-- [ ] Unity aanzetten
 - [ ]  Databricks unity workspace maken
+- [ ] Unity aanzetten
 - [ ] Bronze Storage Account aanmaken
 - [ ]  Bronze Container ABSP aanmaken
 - [ ] Bronze Container vullen met 1 tabel
